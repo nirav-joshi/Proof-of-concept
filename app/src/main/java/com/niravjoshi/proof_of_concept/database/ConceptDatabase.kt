@@ -4,11 +4,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.niravjoshi.proof_of_concept.application.ProofApplication
+import com.niravjoshi.proof_of_concept.concepts.data.FeedDao
 import com.niravjoshi.proof_of_concept.concepts.model.FeedDetailDTO
 import com.niravjoshi.proof_of_concept.concepts.model.FeedsDTO
 
 /**
- * [ConceptDatabase] : Database class defined to provide and store data using [WordDao] for [RoomDatabase] as ORM help for this project.
+ * [ConceptDatabase] : Database class defined to provide and store data using [FeedDao] for [RoomDatabase] as ORM help for this project.
  *
  * @author Nirav Joshi
  * @since 10/14/2019
@@ -44,6 +45,6 @@ abstract class ConceptDatabase : RoomDatabase() {
 
     }
 
-
+    abstract val feedDao: FeedDao
 
 }
