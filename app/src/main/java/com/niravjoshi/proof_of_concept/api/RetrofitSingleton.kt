@@ -28,7 +28,6 @@ class RetrofitSingleton private constructor() {
 
     companion object {
         private const val TAG = "RetrofitSingleton"
-        private const val CONTENT_TYPE = "application/json"
         @JvmStatic
         fun getInstance() = HOLDER.instance
     }
@@ -79,7 +78,7 @@ class RetrofitSingleton private constructor() {
 
     private fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://api.myjson.com/")
+            .baseUrl("https://dl.dropboxusercontent.com/")
             .addConverterFactory(provideGsonConverterFactory())
             .addCallAdapterFactory(provideRxJavaCallAdapterFactory())
             .client(getOkHttpClient().build())

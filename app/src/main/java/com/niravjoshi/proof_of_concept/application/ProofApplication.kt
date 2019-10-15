@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatDelegate
 
 
 /**
- * [Proof_Of_ConceptApplication] :
+ * [ProofApplication] :
  *
  * @author : Nirav Joshi
  * @version 1.0.0
