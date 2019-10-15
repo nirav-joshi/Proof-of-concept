@@ -41,6 +41,7 @@ ext {
     lifecycleExtension = '2.1.0-rc01'
 
     support_version = '28.0.0'
+    room_version = '2.1.0'
     gson = '2.8.5'
     retrofit = '2.6.0'
     gsonConverter = '2.3.0'
