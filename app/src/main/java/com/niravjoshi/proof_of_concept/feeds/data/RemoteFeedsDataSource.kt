@@ -30,5 +30,20 @@ class RemoteFeedsDataSource {
         return@lazy RetrofitSingleton.getInstance().provideApiService()
     }
 
-
+    fun getFeeds(onFeedsCallback: (FeedsDTO?) -> Unit) {
+        if (ProofApplication.isNetworkConnected()) {
+            mApiService.getFeedsDetails().enqueueOn().success { _, response ->
+                when {
+                    response.isSuccessful && response.code() == 200 -> {
+                        onFeedsCallback(response.body())
+                    }
+                    else -> {
+                        onFeedsCallback(response.body())
+                    }
+                }
+            } failure { _, t ->
+                onFeedsCallback(null)
+            }
+        }
+    }
 }

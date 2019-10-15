@@ -30,5 +30,28 @@ class LocalFeedsDataSource {
         fun getInstance() = HOLDER.instance
     }
 
+    fun getFeeds(): List<FeedDetailDTO>? {
+        return database?.feedDao?.runInBackground { getAllFeeds() }
+    }
+
+    fun addFeeds(feedsDTO: FeedsDTO?) {
+        ProofApplication.context.getDefaultPreference()
+            .putValue("title", feedsDTO?.mFeedTitle.toString())
+        feedsDTO?.mFeedsList?.let {
+            if (!it.isNullOrEmpty()) {
+                clearFeeds()
+                database?.feedDao?.runInBackground { addAllFeeds(it) }
+            }
+        }
+
+    }
+
+    fun getFeedCounts(): Long {
+        return database?.feedDao?.runInBackground { getFeedsCount() } ?: 0
+    }
+
+    fun clearFeeds() {
+        database?.feedDao?.runInBackground { this.clearFeedsTable() }
+    }
 }
 

@@ -32,4 +32,27 @@ class FeedsDetailRepository private constructor() {
     }
 
 
+
+    fun addFeedsToLocal(feedsDTO: FeedsDTO) {
+        localDataSource.addFeeds(feedsDTO)
+    }
+
+    fun clearAllLocalDataBase() {
+        localDataSource.clearFeeds()
+    }
+
+
+    fun getFeeds(onFeedsCallback: (List<FeedDetailDTO>?) -> Unit) {
+            if(localDataSource.getFeedCounts()==0L){
+                remoteDataSource.getFeeds{
+                    localDataSource.addFeeds(it)
+                    onFeedsCallback(localDataSource.getFeeds())
+                }
+            }else {
+                onFeedsCallback(localDataSource.getFeeds())
+            }
+
+    }
+
+
 }
