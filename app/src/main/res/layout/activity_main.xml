@@ -26,11 +26,14 @@
         app:refreshing="@{data.swipeProgress.second ?? false}">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:background="@color/color_background"
             android:layout_height="match_parent">
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_feeds"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:padding="@dimen/dimen_padding_5dp"
+                android:scrollbars="none"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

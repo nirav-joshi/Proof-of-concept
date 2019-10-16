@@ -8,4 +8,44 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="TextAppearance.Text.Regular" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="TextAppearance.Text.Bold" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+    </style>
+
+    <style name="TextAppearance.Text.Light" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+
+    <!-- Text style-->
+    <style name="TextStyle">
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="TextStyle.Title.Sub" parent="TextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+    </style>
+    <!--13sp-->
+
+    <style name="TextStyle.Heading" parent="TextStyle">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Bold</item>
+    </style>
+
+
+
+
+    <!--For Desc Styles-->
+    <style name="TextStyle.DescSmall" parent="TextStyle">
+        <item name="android:textColor">@color/textColorSecondary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+    </style>
+
 </resources>

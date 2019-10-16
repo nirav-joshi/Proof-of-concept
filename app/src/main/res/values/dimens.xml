@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="dimen_card_radius_5_dp">5dp</dimen>
+    <dimen name="dimen_margin_2dp">2dp</dimen>
+    <dimen name="dimen_margin_8dp">8dp</dimen>
+    <dimen name="dimen_margin_10dp">10dp</dimen>
+    <dimen name="dimen_margin_12dp">12dp</dimen>
+    <dimen name="dimen_margin_16dp">16dp</dimen>
+
+    <dimen name="dimen_padding_5dp">5dp</dimen>
+
+</resources>
