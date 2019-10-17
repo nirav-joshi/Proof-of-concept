@@ -1,4 +1,4 @@
-package com.niravjoshi.proof_of_concept.concepts.view
+package com.niravjoshi.proof_of_concept.feeds.view
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -16,7 +16,6 @@ import com.niravjoshi.proof_of_concept.application.ProofApplication.Companion.is
 import com.niravjoshi.proof_of_concept.base.AbstractBaseActivity
 import com.niravjoshi.proof_of_concept.base.absActivityBuilder
 import com.niravjoshi.proof_of_concept.concepts.model.FeedDetailDTO
-import com.niravjoshi.proof_of_concept.concepts.view.FeedsDetailViewModel
 
 class FeedsActivity : AbstractBaseActivity() {
 
