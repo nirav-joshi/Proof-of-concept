@@ -28,17 +28,17 @@ Create an Android app which:
 
 
 # Project Structure
-MVVM Architecture with Databinding and  AndroidX 
+• MVVM Architecture with Databinding and  AndroidX 
 
-Kotlin for programming language
+• Kotlin for programming language
 
-Binder pattern used for all activities
+• Binder pattern used for all activities
 
-Builder pattern used for Recylerview 
+• Builder pattern used for Recylerview 
 
-Kotlin Dsl implementation
+• Kotlin DSL implementation
 
-Kotlin Extensions 
+• Kotlin Extensions 
 
 
 
@@ -49,9 +49,17 @@ Kotlin Extensions
 
 3 . Glide for image processing 
 
-
 4 . Room persistence for sqlite database integration
 
 5 . SwipeRefreshlayout for refresh data component
 
 
+# Project Screenshots
+
+• In portrait mode
+
+![](https://i.stack.imgur.com/vhIUV.png)
+
+• In Landscape mode  ( Staggered Layout)
+
+![](https://i.stack.imgur.com/57Hdz.png)
