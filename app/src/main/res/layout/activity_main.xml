@@ -8,7 +8,7 @@
 
         <variable
             name="data"
-            type="com.niravjoshi.proof_of_concept.concepts.view.FeedActivityBinder" />
+            type="com.niravjoshi.proof_of_concept.feeds.view.FeedActivityBinder" />
     </data>
 
 

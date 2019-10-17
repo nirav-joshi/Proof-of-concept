@@ -1,17 +1,12 @@
-package com.niravjoshi.proof_of_concept.concepts.view
+package com.niravjoshi.proof_of_concept.feeds.view
 
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.ObservableField
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.niravjoshi.proof_of_concept.base.AbstractBinding
 import com.niravjoshi.proof_of_concept.databinding.ActivityMainBinding

@@ -1,7 +1,6 @@
 package com.niravjoshi.proof_of_concept.feeds.view
 
 import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -17,7 +16,6 @@ import com.niravjoshi.proof_of_concept.application.ProofApplication.Companion.is
 import com.niravjoshi.proof_of_concept.base.AbstractBaseActivity
 import com.niravjoshi.proof_of_concept.base.absActivityBuilder
 import com.niravjoshi.proof_of_concept.concepts.model.FeedDetailDTO
-import com.niravjoshi.proof_of_concept.concepts.view.FeedActivityBinder
 import com.niravjoshi.proof_of_concept.concepts.view.FeedsDetailViewModel
 
 class FeedsActivity : AbstractBaseActivity() {
