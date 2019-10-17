@@ -1,5 +1,6 @@
 package com.niravjoshi.proof_of_concept.feeds.view
 
+import android.graphics.Bitmap
 import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
@@ -7,7 +8,11 @@ import androidx.databinding.ObservableField
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.BitmapImageViewTarget
+import com.bumptech.glide.request.transition.Transition
+import com.niravjoshi.proof_of_concept.R
 import com.niravjoshi.proof_of_concept.base.AbstractBinding
 import com.niravjoshi.proof_of_concept.databinding.ActivityMainBinding
 import com.niravjoshi.proof_of_concept.util.gone
@@ -58,7 +63,7 @@ class FeedActivityBinder() : AbstractBinding<ActivityMainBinding>(),
                         .load(imageUrl)
                         .apply(RequestOptions().override(iv.width, iv.height))
                         .into(iv)
-                    iv.show()
+                        iv.show()
                 }
             } else {
                 imageView?.gone()
