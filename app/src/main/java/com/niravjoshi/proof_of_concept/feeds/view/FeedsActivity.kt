@@ -16,6 +16,8 @@ import com.niravjoshi.proof_of_concept.application.ProofApplication.Companion.is
 import com.niravjoshi.proof_of_concept.base.AbstractBaseActivity
 import com.niravjoshi.proof_of_concept.base.absActivityBuilder
 import com.niravjoshi.proof_of_concept.concepts.model.FeedDetailDTO
+import com.niravjoshi.proof_of_concept.util.gone
+import com.niravjoshi.proof_of_concept.util.show
 
 class FeedsActivity : AbstractBaseActivity() {
 
@@ -57,12 +59,13 @@ class FeedsActivity : AbstractBaseActivity() {
                 feedActivityBinder.swipeProgress.set(Pair(first = true, second = true))
                 feedsDetailViewModel.refreshFeeds()
                 Thread(Runnable {
-                    Glide.get(this).clearDiskCache();
+                    Glide.get(this).clearDiskCache()
                 })
 
             } else {
                 feedActivityBinder.swipeProgress.set(Pair(first = true, second = false))
-                Toast.makeText(this, "No Internet Connection Available", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.no_internet_connection), Toast.LENGTH_LONG)
+                    .show()
             }
 
         }
@@ -105,7 +108,13 @@ class FeedsActivity : AbstractBaseActivity() {
             }
             feedActivityBinder.swipeProgress.set(Pair(first = true, second = false))
             title = this.sharedPreference?.getString("title", "")
-            feedsAdapter?.addAllItems(it?.toMutableList())
+            if (it?.isNullOrEmpty()==true) {
+                feedActivityBinder.binding?.tvNodata?.show()
+            }else{
+                feedActivityBinder.binding?.tvNodata?.gone()
+                feedsAdapter?.addAllItems(it.toMutableList())
+            }
+
         })
     }
 
