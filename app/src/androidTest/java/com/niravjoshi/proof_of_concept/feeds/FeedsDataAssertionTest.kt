@@ -3,7 +3,6 @@ package com.niravjoshi.proof_of_concept.feeds
 import android.view.View
 import androidx.annotation.NonNull
 import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
@@ -19,6 +18,7 @@ import com.niravjoshi.proof_of_concept.R
 import com.niravjoshi.proof_of_concept.adapters.BindingRecyclerAdapter
 import com.niravjoshi.proof_of_concept.feeds.view.FeedsActivity
 import com.niravjoshi.proof_of_concept.feeds.view.FeedsDetailViewModel
+import com.niravjoshi.proof_of_concept.haltThread
 import com.niravjoshi.proof_of_concept.utils.ToolbarMatchers
 import org.hamcrest.Description
 import org.hamcrest.Matcher
@@ -28,7 +28,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import kotlin.random.Random
-
 
 /**
  * [FeedsDataAssertionTest] :
@@ -42,8 +41,6 @@ import kotlin.random.Random
 @LargeTest
 class FeedsDataAssertionTest {
     companion object {
-        //We assert initial title to verify integrity
-        const val INITIAL_TITLE = "Loading data"
         //Key for title to be load from SharedPreference
         const val PREF_KEY_TITLE = "title"
     }
@@ -62,7 +59,6 @@ class FeedsDataAssertionTest {
         if (!this::viewModel.isInitialized) {
             throw UninitializedPropertyAccessException("ViewModel is not initialized yet!")
         }
-        //(viewModel.feedsLiveData as? MutableLiveData)?.postValue(emptyList())
     }
 
     @Test
@@ -104,6 +100,7 @@ class FeedsDataAssertionTest {
                 )
             )
         )
+        haltThread(500)
         recyclerView?.check(
             matches(
                 atPositionOnView(
@@ -140,10 +137,6 @@ class FeedsDataAssertionTest {
                 return itemMatcher.matches(targetView)
             }
         }
-    }
-
-    fun haltThread(millis: Long = 1000L) {
-        Thread.sleep(millis)
     }
 
     @After
